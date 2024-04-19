@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TasksServices from '../../Services/TasksServices';
+import './Tasks.css';
 
 function Tasks() {
 
@@ -25,29 +26,32 @@ function Tasks() {
 
     return (
         <div className="tasks">
-            <div className="">
-                <button>Nueva tarea</button>
-            </div>
-            <div>
-                <ul>
-                    {tasks.map((task, index) => (
-                        <li key={index}>
-                            <div className='trabajos'>
-                                {task.status === 'done' ? (
-                                    <i className="bi bi-check-square"></i>
-                                ) : (
-                                    <i className="bi bi-square"></i>
-                                )}
-                                <div>
-                                    <p className='name'>{task.name}</p>
-                                    <p className='date'>{task.creationDate}</p>
+            <div className='tasks-container'>
+                <div className="">
+                    <button className="btn custom-btn me-2">Nueva tarea</button>
+                </div>
+                <div>
+                    <ul>
+                        {tasks.map((task, index) => (
+                            <li key={index}>
+                                <div className='trabajos'>
+                                    {task.status === 'done' ? (
+                                        <i className="bi bi-check-square"></i>
+                                    ) : (
+                                        <i className="bi bi-square"></i>
+                                    )}
+                                    <div>
+                                        <p className='name'>{task.name}</p>
+                                        <p className='date'>{task.creationDate}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <button className="btn custom-btn me-2" onClick={() => verTarea(index)}>Ver proyecto</button>
-                        </li>
-                    ))}
-                </ul>
+                                <button className="btn custom-btn me-2" onClick={() => verTarea(index)}>Ver</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
+
         </div>
     );
 }
