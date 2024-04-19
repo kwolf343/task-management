@@ -1,0 +1,31 @@
+.sidebar{
+    background-color: black;
+    color: rgb(52, 207, 208);
+    width: max-content;
+    font-size: 25px;
+}
+.sidebar ul{
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+.sidebar li{
+    display: flex;
+}
+.menu{
+    color: white;
+}
+.items{
+    margin-left: 15px;
+}
+.opc:hover{
+    color: rgb(27, 174, 156);
+    text-decoration: underline ;
+    text-underline-offset: 1em;
+    cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+    .items{
+        display: none;
+    }
+}
