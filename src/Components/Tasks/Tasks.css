@@ -6,9 +6,14 @@
 .tasks-container{
     padding: 5%;
     border-radius: 15px;
-    width: max-content;
-    background-color: rgb(16,38,71);
+    width: 100%;
+    background-color: rgb(12, 31, 58);
     color: white;
+}
+.tasks ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .custom-btn {
     color: rgb(34, 207, 208)!important;
@@ -24,4 +29,44 @@
 .custom-btn:active {
     background-color: rgb(23, 62, 81) !important;
     color: rgb(34, 207, 208)!important;
+}
+.tareas-individuales {
+    display: flex;
+    align-items: center;
+}
+.tareas-individuales > div {
+    padding: 0 1rem;
+}
+.tasks-container li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0.7rem;
+}
+
+.tasks-container button {
+    display: inline-block;
+    padding: 0.5rem 0rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    min-width: 50px;
+}
+
+.tasks-container ul {
+    padding: 0;
+    margin-bottom: 3px;
+}
+
+.tasks-container ul > li:nth-child(2n + 1) {
+    background-color: rgb(10,25,47);
+}
+
+.tasks-container ul > li:nth-child(2n + 2) {
+    background-color: rgb(12, 31, 58);
+}
+.btn-new{
+    padding: 5px 15px!important;
+    margin-bottom: 10px;
 }

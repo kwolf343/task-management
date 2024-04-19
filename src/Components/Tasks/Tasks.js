@@ -28,13 +28,13 @@ function Tasks() {
         <div className="tasks">
             <div className='tasks-container'>
                 <div className="">
-                    <button className="btn custom-btn me-2">Nueva tarea</button>
+                    <button className="btn btn-light btn-new">Nueva tarea</button>
                 </div>
                 <div>
                     <ul>
                         {tasks.map((task, index) => (
                             <li key={index}>
-                                <div className='trabajos'>
+                                <div className='tareas-individuales'>
                                     {task.status === 'done' ? (
                                         <i className="bi bi-check-square"></i>
                                     ) : (
