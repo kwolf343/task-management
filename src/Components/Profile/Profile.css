@@ -1,0 +1,31 @@
+.profile{
+    width: 100%;
+    padding: 5%;
+    justify-content:center;
+    color: rgb(113, 122, 157);
+}
+.profile img{
+    width: 100%;
+    border-radius: 100%;
+    padding: 2%;
+}
+.profile-container{
+    height: min-content;
+    border-radius: 15px;
+    background-color: rgb(9,21, 40);
+    padding: 4% 2%;
+}
+.profile-container>div{
+    float: left;
+}
+.profile .info{
+    padding: 0 3%;
+}
+@media only screen and (max-width: 768px) {
+    .profile img{
+        width: 40%;
+    }
+    .info{
+        padding: 5% 3%!important;
+    }
+}

@@ -1,18 +1,21 @@
-import React from "react";
+import React from 'react';
 import './Sidebar.css';
 function Sidebar(){
+    const home = () =>{
+        window.location.href = "/";
+    }
     const tasks = () =>{
         window.location.href = "/tasks";
     }
     const profile = () =>{
-        window.location.href = "/";
+        window.location.href = "/Profile";
     }
     return(
         <div className="sidebar">
             <ul>
-                <li><p className="menu">MENU</p></li>
-                <li onClick={tasks} className="opc"><i className="bi bi-card-checklist "></i><p className="items">Tasks</p></li>
-                <li onClick={profile} className="opc"><i className="bi bi-house"></i><p className="items">Profile</p></li>
+                <li onClick={home} className="menu"><i className="bi bi-house"></i><p>Home</p></li>
+                <li onClick={tasks}><i className="bi bi-card-checklist"></i><p>Tasks</p></li>
+                <li onClick={profile}><i class="bi bi-person-fill"></i><p>Profile</p></li>
             </ul>
         </div>
     );

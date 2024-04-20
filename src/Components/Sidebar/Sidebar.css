@@ -1,32 +1,40 @@
 .sidebar{
     background-color: black;
-    color: rgb(52, 207, 208);
+    color: rgb(113, 122, 157);
     width: max-content;
     font-size: 25px;
 }
 .sidebar ul{
     list-style: none;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
 }
 .sidebar li{
     display: flex;
+    margin-bottom: 20px;
+    transform: scale(0.95);
+    transition: 1s;
 }
-
-.menu{
+.sidebar li:hover{
+    transform: scale(1);
+}
+.sidebar li:active{
+    transform: scale(0.95);
+}
+.sidebar .menu{
     color: white;
 }
-.items{
-    margin-left: 15px;
-}
-.opc:hover{
+.sidebar li:hover{
     color: rgb(27, 174, 156);
     text-decoration: underline ;
     text-underline-offset: 1em;
     cursor: pointer;
 }
+.sidebar p{
+    margin: 0 0 0 15px;
+}
 @media only screen and (max-width: 800px) {
-    .items{
+    .sidebar p{
         display: none;
     }
     .sidebar li{
