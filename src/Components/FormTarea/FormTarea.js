@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './FormTarea.css';
 import { useParams } from "react-router-dom";
-import Task from '../../Models/Task';
-import TasksServices from '../../Services/TasksServices';
-import Swal from 'sweetalert2';
+import * as formTareaFunctions from './FormTareaFunctions.js';
 
 function FormTarea() {
     const { parametro } = useParams();
@@ -12,38 +10,17 @@ function FormTarea() {
     const [status, setStatus] = useState('');
     const [dueDate, setDueDate] = useState('');
 
-    const enviar = async (e) => {
-        e.preventDefault();
-        const fetchData = async () => {
-            try {
-                const task = new Task(name, description, status, dueDate);
-                const response = await TasksServices.setTask(task);
-                Swal.fire({
-                    title: "Exito!",
-                    text: "Tarea guardada exitosamente",
-                    icon: "success",
-                    heightAuto: false
-                  }).then((result) => {
-                    window.location.href = '/tasks';
-                  });
-            } catch (error) {
-                Swal.fire({
-                    title: "Ocurrió un error!",
-                    text: error,
-                    icon: "error",
-                    heightAuto: false
-                  });
-            }
-        };
-        fetchData();
+    useEffect(() => {
+        formTareaFunctions.fetchData(parametro, setName, setStatus, setDueDate, setDescription);
+    }, []);
+
+    const handleSubmit = async (e) => {
+        formTareaFunctions.enviar(e, parametro, name, description, status, dueDate);
     };
-    const cancelar = () =>{
-        window.location.href = '/tasks';
-    }
 
     return (
         <div className='estilo-box form-container'>
-            <form onSubmit={enviar} className=''>
+            <form onSubmit={handleSubmit} className=''>
                 {parametro ? (
                     <h1>Editar tarea</h1>
                 ) : (
@@ -99,8 +76,8 @@ function FormTarea() {
                     />
                 </div>
                 <div className='container-btn'>
-                    <button type="submit" className="btn btn-light">Crear</button>
-                    <button type="button" className="btn btn-light" onClick={cancelar}>Cancelar</button>
+                    <button type="submit" className="btn btn-light">Guardar</button>
+                    <button type="button" className="btn btn-light" onClick={formTareaFunctions.cancelar}>Cancelar</button>
                 </div>
             </form>
         </div>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import * as tasksFunctions from './TasksFunctions.js';
 import TasksServices from '../../Services/TasksServices';
 import './Tasks.css';
 import Card from './Card/Card';
-import Swal from 'sweetalert2';
 
 function Tasks() {
 
@@ -17,15 +18,11 @@ function Tasks() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await TasksServices.getTasks();
+                const response = await TasksServices.getAllTasks();
                 const misTasks = Object.values(response);
                 if (misTasks.length > 0) {
-                    const tasksDone = misTasks.filter(task => task.status === 'done');
-                    const tasksDoing = misTasks.filter(task => task.status === 'doing');
                     setTasks(misTasks);
-                    setTasksDone(tasksDone);
-                    setTasksDoing(tasksDoing);
-                    setTasksVisual(tasksDoing);
+                    tasksFunctions.actualizarLista(misTasks, status, setTasksDone, setTasksDoing, setTasksVisual);
                     setLoading(false);
                 } else {
                     setCarga('No se encontraron tareas');
@@ -38,71 +35,23 @@ function Tasks() {
             }
         };
         fetchData();
-    }, []);
-
-    const cambiarStatus = (myStatus) => {
-        if (myStatus === 'done') {
-            setStatus(myStatus);
-            setTasksVisual(tasksDone);
-        }else if(myStatus === 'doing'){
-            setStatus(myStatus);
-            setTasksVisual(tasksDoing);
-        }
-    }
-
-    const nuevaTarea = () => {
-        window.location.href = '/FormTarea';
-    }
-
-    const editarTarea = (index) => {
-        window.location.href = `/FormTarea/${index}`;
-    }
-    const eliminarTarea = (index) => {
-        Swal.fire({
-            title: '¿Borrar tarea?',
-            text: "¡No podras revertir eso!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: '¡Sí, Borrar!',
-            heightAuto: false
-        }).then((result) => {
-            if (result.isConfirmed) {
-                try{
-                    Swal.fire({
-                        title: "Exito",
-                        text: "Tarea Borrada exitosamente",
-                        icon: "success",
-                        heightAuto: false
-                    });
-                }catch(error){
-                    Swal.fire({
-                        title: "Error!",
-                        text: "Ocurrió un error al intentar eliminar la tarea",
-                        icon: "error",
-                        heightAuto: false
-                    });
-                }
-            }
-        })
-    }
+    }, [status]);
 
     return (
         <div>
             <div>
                 <h1 className='titulo'>Mis tareas</h1>
                 <div className="task-container-superior">
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div className="dropdown">
+                        <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {status}
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onClick={() => cambiarStatus('done')}>done</a></li>
-                            <li><a class="dropdown-item" onClick={() => cambiarStatus('doing')}>doing</a></li>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" onClick={() => tasksFunctions.cambiarStatus('done', tasksDone, tasksDoing, setStatus, setTasksVisual)}>done</a></li>
+                            <li><a className="dropdown-item" onClick={() => tasksFunctions.cambiarStatus('doing', tasksDone, tasksDoing, setStatus, setTasksVisual)}>doing</a></li>
                         </ul>
                     </div>
-                    <button className="btn btn-light" onClick={nuevaTarea}>Nueva tarea</button>
+                    <button className="btn btn-light" onClick={tasksFunctions.nuevaTarea}>Nueva tarea</button>
                 </div>
                 <div className='estilo-box cards'>
                     {loading ? (
@@ -119,8 +68,8 @@ function Tasks() {
                                         name={task.name}
                                         dueDate={task.dueDate}
                                         status={task.status}
-                                        editarTarea={editarTarea}
-                                        eliminarTarea={eliminarTarea}
+                                        editarTarea={() => tasksFunctions.editarTarea(task.id)}
+                                        eliminarTarea={() => tasksFunctions.eliminarTarea(task.id, tasks, setTasks, (lista) => tasksFunctions.actualizarLista(lista, status, setTasksDone, setTasksDoing, setTasksVisual))}
                                     />
                                 </li>
                             ))}
@@ -131,4 +80,5 @@ function Tasks() {
         </div>
     );
 }
+
 export default Tasks;

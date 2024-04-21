@@ -7,12 +7,12 @@ function Card({ id, name, dueDate, status, editarTarea, eliminarTarea}) {
         <div className="card-container">
             <div className='tareas-individuales'>
                 {status === 'done' ? (
-                    <i className="bi bi-check-square icono-grande"/>
+                    <i className="bi bi-check-lg icono-status"/>
                 ) : (
-                    <i className="bi bi-square icono-grande"/>
+                    <i className="bi bi-hourglass icono-status"/>
                 )}
                 <div className="card-info">
-                    <p className='name'><strong>{name}</strong><i className="bi bi-pencil-fill icono-pequeno" onClick={() => editarTarea(id)}/></p>
+                    <p className='name'><strong>{name}</strong><i className="bi bi-pencil-fill icono-pequeno pointer" onClick={() => editarTarea(id)}/></p>
                     <p className='date'>{fechaSinHora}</p>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-.icono-grande{
+.icono-grande, .icono-status{
     font-size: 30px;
 }
 .icono-pequeno{
@@ -20,7 +20,8 @@
     padding: 0.7rem;
     width: 100%;
 }
-.card-container i:hover{
+
+.icono-grande:hover, .pointer:hover{
     cursor: pointer;
     color: white;
 }
