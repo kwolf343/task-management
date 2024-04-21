@@ -15,7 +15,7 @@ function Sidebar(){
             <ul>
                 <li onClick={home} className="menu"><i className="bi bi-house"></i><p>Home</p></li>
                 <li onClick={tasks}><i className="bi bi-card-checklist"></i><p>Tasks</p></li>
-                <li onClick={profile}><i class="bi bi-person-fill"></i><p>Profile</p></li>
+                <li onClick={profile}><i className="bi bi-person-fill"></i><p>Profile</p></li>
             </ul>
         </div>
     );

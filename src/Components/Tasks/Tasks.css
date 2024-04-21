@@ -1,93 +1,17 @@
-.tasks {
-    width: 100%;
+.task-container-superior{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.tasks-container {
-    padding: 5%;
-    width: 100%;
-    color: rgb(193, 198, 213);
+.cards{
+    margin-top: 7px;
+    padding: 2%;
 }
-
-.container-superior {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.task-box {
-    background-color: rgb(12, 34, 58);
-    border-radius: 15px;
-    padding: 15px;
-}
-
-.tasks ul {
+.cards ul{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.tareas-individuales {
-    display: flex;
-    align-items: center;
-}
-
-.tareas-individuales>div {
-    padding: 0 1rem;
-}
-
-.task-box i {
-    font-size: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.tasks-container li {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    justify-content: space-between;
-    padding: 0.7rem;
-}
-
-.tasks-container button {
-    display: inline-block;
-    padding: 0.5rem 0rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-align: center;
-    min-width: 50px;
-}
-
-.tasks-container ul {
-    padding: 0;
-    margin-bottom: 3px;
-}
-
-.tasks-container ul>li:nth-child(2n + 1) {
-    background-color: rgb(12, 31, 58);
-
-}
-
-.tasks-container ul>li:nth-child(2n + 2) {
-    background-color: rgb(10, 25, 47);
-}
-
-.tasks .btn-new {
-    padding: 5px 15px !important;
-    height: min-content;
-}
-
-.tasks .bi-card-text {
-    margin-right: 20px !important;
-}
-.carging{
-    align-items: center;
-}
-.carging p{
-    font-size: 30px;
-    margin:  0 0 0 5px;
 }
 .loader {
     width: 30px;
@@ -99,7 +23,22 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
 }
-
+.carga{
+    display: flex;
+}
+.carga p{
+    font-size: 20px;
+    margin-left: 10px;
+}
+.cards li:nth-child(2n + 1){
+    background-color: rgb(14,39, 67);
+}
+.cards li:nth-child(2n + 2){
+    background-color: #2a2a40;
+}
+.dropdown-item.active, .dropdown-item:hover {
+    background-color:rgb(193,198,213) !important;
+  }
 @keyframes rotation {
     0% {
         transform: rotate(0deg);

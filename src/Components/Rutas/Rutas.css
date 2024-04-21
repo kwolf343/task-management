@@ -1,0 +1,8 @@
+.rutas-container{
+    width: 100%;
+    padding: 0 5%;
+}
+.rutas-container-central{
+    height: min-content;
+    margin-top: 5%;
+}

@@ -10,12 +10,11 @@ function Profile() {
     const direccion = 'San salvador Avenida Colón';
 
     return (
-        <div className="profile d-flex">
-            <div className="profile-container col-md-9 col-sm-12">
-                <div className="col-md-3 col-sm-12 d-flex justify-content-center">
+            <div className="estilo-box d-flex row">
+                <div className="col-lg-4 col-11 profile">
                     <img src={imagen} alt="Imagen del usuario" />
                 </div>
-                <div className="col-md-9 col-sm-12 info">
+                <div className="col-lg-8 col-11 col-sm-11 datos-user">
                     <p><strong>Nombre:</strong> {nombre}</p>
                     <p><strong>Usuario:</strong> {usuario}</p>
                     <p><strong>Telefono:</strong> {telefono}</p>
@@ -23,7 +22,6 @@ function Profile() {
                     <p><strong>Direccion:</strong> {direccion}</p>
                 </div>
             </div>
-        </div>
     );
 }
 export default Profile;

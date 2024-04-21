@@ -1,0 +1,30 @@
+.icono-grande{
+    font-size: 30px;
+}
+.icono-pequeno{
+    margin-left: 15px;
+}
+.tareas-individuales{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.tareas-individuales p{
+    margin: 0;
+}
+.card-container {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0.7rem;
+    width: 100%;
+}
+.card-container i:hover{
+    cursor: pointer;
+    color: white;
+}
+.card-info{
+    padding: 0 4%;
+    flex-grow: 1;
+}

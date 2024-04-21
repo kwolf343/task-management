@@ -1,0 +1,26 @@
+.form-container{
+    margin: 0;
+    height: min-content;
+}
+.cajas{
+    margin: 5% 0;
+}
+.status-container, .status-select{
+    display: flex;
+}
+.status-select{
+    margin-right: 15px;
+    cursor: pointer;
+    align-items:center;
+    width: 50%;
+}
+.status-select p{
+    margin: 0 5px;
+}
+.container-btn{
+    display: flex;
+    justify-content: space-around;
+}
+.container-btn button{
+    padding: 1% 5%;
+}

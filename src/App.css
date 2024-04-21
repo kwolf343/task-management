@@ -2,3 +2,15 @@
     background-color: rgb(10,25,47);
     height: 100%;
 }
+.estilo-box{
+    background-color: rgb(14,39, 67);
+    padding: 5%;
+    border-radius: 15px;
+    color: rgb(193, 198, 213);
+    margin-top: 10%;
+    height: 100%;
+}
+
+.titulo{
+    color: rgb(193,198,213);
+}
