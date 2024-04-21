@@ -49,5 +49,5 @@ export const enviar = async (e, parametro, name, description, status, dueDate) =
 };
 
 export const cancelar = () =>{
-    window.location.href = '/tasks';
+    window.location.href = '/';
 };

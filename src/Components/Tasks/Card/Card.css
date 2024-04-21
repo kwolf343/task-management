@@ -20,7 +20,6 @@
     padding: 0.7rem;
     width: 100%;
 }
-
 .icono-grande:hover, .pointer:hover{
     cursor: pointer;
     color: white;

@@ -1,17 +1,29 @@
-.task-container-superior{
+.task-container-superior {
     display: flex;
-    justify-content:space-between;
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.cards{
-    margin-top: 7px;
+.cards {
+    margin-top: 15px;
     padding: 2%;
+    max-height: 365px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6b6b6b #1e1e1e;
 }
-.cards ul{
+.cards ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.cards::-webkit-scrollbar {
+    width: 0;
+}
+.cards::-webkit-scrollbar-thumb {
+    background-color: #6b6b6b;
+}
+.cards::-webkit-scrollbar-thumb:hover {
+    background-color: #4f4f4f;
 }
 .loader {
     width: 30px;
@@ -23,22 +35,23 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
 }
-.carga{
+.carga {
     display: flex;
 }
-.carga p{
+.carga p {
     font-size: 20px;
     margin-left: 10px;
 }
-.cards li:nth-child(2n + 1){
-    background-color: rgb(14,39, 67);
+.cards li:nth-child(2n + 1) {
+    background-color: rgb(14, 39, 67);
 }
-.cards li:nth-child(2n + 2){
+.cards li:nth-child(2n + 2) {
     background-color: #2a2a40;
 }
-.dropdown-item.active, .dropdown-item:hover {
-    background-color:rgb(193,198,213) !important;
-  }
+.dropdown-item.active,
+.dropdown-item:hover {
+    background-color: rgb(193, 198, 213) !important;
+}
 @keyframes rotation {
     0% {
         transform: rotate(0deg);

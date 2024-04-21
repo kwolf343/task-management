@@ -6,7 +6,6 @@ function Sidebar(){
     return(
         <div className="sidebar">
             <ul>
-                <li onClick={sidebarFunctions.home} className="menu"><i className="bi bi-house"></i><p>Home</p></li>
                 <li onClick={sidebarFunctions.tasks}><i className="bi bi-card-checklist"></i><p>Tasks</p></li>
                 <li onClick={sidebarFunctions.profile}><i className="bi bi-person-fill"></i><p>Profile</p></li>
             </ul>
