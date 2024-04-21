@@ -17,9 +17,16 @@ export const fetchData = async (parametro, setName, setStatus, setDueDate, setDe
         }
     }
 };
-
-export const enviar = async (e, parametro, name, description, status, dueDate) => {
-    e.preventDefault();
+export const enviar = async (parametro, name, description, status, dueDate) => {
+    if (name.trim() === '' || description.trim() === '' || status.trim() === '' || dueDate.trim() === '') {
+        Swal.fire({
+            title: "Error!",
+            text: "Por favor completa todos los campos.",
+            icon: "error",
+            heightAuto: false
+        });
+        return;
+    }
     try {
         const task = new Task(name, description, status, dueDate);
         let mensaje='';
@@ -36,7 +43,7 @@ export const enviar = async (e, parametro, name, description, status, dueDate) =
             icon: "success",
             heightAuto: false
         }).then((result) => {
-            window.location.href = '/tasks';
+            window.location.href = '/';
         });
     } catch (error) {
         Swal.fire({
@@ -47,6 +54,7 @@ export const enviar = async (e, parametro, name, description, status, dueDate) =
         });
     }
 };
+
 
 export const cancelar = () =>{
     window.location.href = '/';

@@ -9,13 +9,24 @@ function FormTarea() {
     const [description, setDescription] = useState('');
     const [status, setStatus] = useState('');
     const [dueDate, setDueDate] = useState('');
+    const [procesando, setProcesando] = useState(false);
 
     useEffect(() => {
         formTareaFunctions.fetchData(parametro, setName, setStatus, setDueDate, setDescription);
     }, []);
 
     const handleSubmit = async (e) => {
-        formTareaFunctions.enviar(e, parametro, name, description, status, dueDate);
+        e.preventDefault();
+        if (procesando) {
+            return;
+        }
+        setProcesando(true); // Establecer procesando en true antes de realizar el envío
+    
+        try {
+            await formTareaFunctions.enviar(parametro, name, description, status, dueDate);
+        } finally {
+            setProcesando(false); // Restablecer procesando a false después de completar el envío
+        }
     };
 
     return (
