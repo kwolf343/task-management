@@ -20,12 +20,12 @@ function FormTarea() {
         if (procesando) {
             return;
         }
-        setProcesando(true); // Establecer procesando en true antes de realizar el envío
+        setProcesando(true);
     
         try {
             await formTareaFunctions.enviar(parametro, name, description, status, dueDate);
         } finally {
-            setProcesando(false); // Restablecer procesando a false después de completar el envío
+            setProcesando(false);
         }
     };
 
