@@ -5,7 +5,7 @@ import Rutas from './Components/Rutas/Rutas';
 
 function App() {
   return (
-    <div className="App d-flex all">
+    <div className="App all">
       <Sidebar/>
       <Rutas/>
     </div>

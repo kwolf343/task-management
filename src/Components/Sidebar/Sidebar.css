@@ -33,11 +33,28 @@
 .sidebar p{
     margin: 0 0 0 15px;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .sidebar p{
         display: none;
     }
     .sidebar li{
         justify-content: center;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .sidebar{
+        width: 100%;
+    }
+    .sidebar ul{
+        display: flex;
+        padding: 30px 40px;
+    }
+    .sidebar li{
+        display: block;
+        margin: 0;
+        margin-right: 30px;
+    }
+    .sidebar i{
+        font-size: 30px;
     }
 }

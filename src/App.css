@@ -1,6 +1,7 @@
 .all{
     background-color: rgb(10,25,47);
     height: 100%;
+    display: flex;
 }
 .estilo-box{
     background-color: rgb(14,39, 67);
@@ -14,4 +15,10 @@
 
 .titulo{
     color: rgb(193,198,213);
+}
+@media only screen and (max-width: 550px) {
+    .all{
+        display: block;
+       
+    }
 }
