@@ -1,27 +1,27 @@
 import React from "react";
 import './Profile.css';
-import imagen from '../../Images/user.png';
+import imagen from '../../Images/perfil.png';
 
 function Profile() {
-    const nombre = 'Juan perez';
-    const usuario = 'JuanP3';
-    const telefono = '7777-7777';
-    const email = 'Juan_perez@gmail.com';
-    const direccion = 'San salvador Avenida Colón';
+    const nombre = 'Kevin Antonio Magaña Monroy';
+    const cargo = 'Developer';
+    const telefono = '+503 7944-0351';
+    const email = 'kammonroy@gmail.com';
+    const direccion = 'www.kevinamm.com';
 
     return (
-            <div className="estilo-box d-flex row">
-                <div className="col-lg-4 col-11 profile">
-                    <img src={imagen} alt="Imagen del usuario" />
-                </div>
-                <div className="col-lg-8 col-11 col-sm-11 datos-user">
+        <div className="profile d-flex row">
+            <img src={imagen} alt="Imagen del usuario" />
+            <div className="d-flex justify-content-center">
+                <div className="contenido-profile">
                     <p><strong>Nombre:</strong> {nombre}</p>
-                    <p><strong>Usuario:</strong> {usuario}</p>
+                    <p><strong>Cargo:</strong> {cargo}</p>
                     <p><strong>Telefono:</strong> {telefono}</p>
                     <p><strong>Correo:</strong> {email}</p>
-                    <p><strong>Direccion:</strong> {direccion}</p>
+                    <p><strong>Sitio Web:</strong> <a href="https://www.kevinamm.com/" target="_blank">{direccion}</a></p>
                 </div>
             </div>
+        </div>
     );
 }
 export default Profile;

@@ -1,0 +1,82 @@
+.Alert-Service-Principal {
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Alert-Service-Central {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5% 0.7%;
+    border-radius: 10px;
+    transform: scale(0.7);
+    transition: .5s;
+}
+
+.Alert-Service-Central-Efecto {
+    transform: scale(1) !important;
+}
+
+.Alert-Service-Superior{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.Alert-Service-Componente {
+    padding: 1%;
+}
+
+.Alert-Service-btnCerrar {
+    cursor: pointer;
+}
+
+.Alert-Service-btn {
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border: solid #eee;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: .2s;
+    color: white;
+    min-width: 25%;
+    max-width: 100%;
+}
+
+.Alert-Service-btn:Active {
+    transform: scale(0.9);
+}
+
+.Alert-Service-Inferior {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 0;
+}
+
+.Alert-Service-btnSi {
+    background: rgb(76, 175, 80);
+}
+
+.Alert-Service-btnNo {
+    background: rgb(221, 51, 51);
+}
+
+.Alert-Service-btnOk {
+    background: rgb(48, 133, 214);
+}
+
+.Alert-Service-btnCancelar {
+    background: gray;
+}

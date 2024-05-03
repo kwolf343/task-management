@@ -1,24 +1,29 @@
-.profile{
-    justify-content:center;
-    color: rgb(113, 122, 157);
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke;
+    width: 450px;
+    max-width: 90vw;
+    padding: 5% 5% 10% 5%;
 }
-.profile img{
-    width: 100%;
+
+.profile img {
+    width: 50%;
     border-radius: 100%;
-    padding: 2%;
 }
-.row{
-    margin: 0;
+
+.contenido-profile {
+    margin-top: 5%;
 }
-@media only screen and (max-width: 991.5px) {
-    .profile{
-        display: flex;
-        justify-content: center;
-    }
-    .profile img{
-        width: 40%;
-    }
-    .datos-user{
-        margin-top: 5%;
-    }
+
+.contenido-profile p {
+    margin: 15px 0 0 0;
 }
+
+.contenido-profile a {
+    color: white;
+    text-decoration: none;
+}
+

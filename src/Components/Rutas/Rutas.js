@@ -11,7 +11,6 @@ function Rutas() {
                 <Router>
                     <Routes>
                         <Route path='/' element={<Tasks />}></Route>
-                        <Route path='/profile' element={<Profile />}></Route>
                         <Route path='/FormTarea' element={<FormTarea />} />
                         <Route path='/FormTarea/:parametro' element={<FormTarea />} />
                         <Route path='*' element={<Error />} />
